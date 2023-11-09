@@ -7,14 +7,13 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/url"
 	"os"
 	"path/filepath"
 	"testing"
 
-	sqlite3 "github.com/mutecomm/go-sqlcipher/v4"
+	sqlite3 "github.com/dm764/go-sqlcipher/v4"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -32,7 +31,7 @@ CREATE TABLE KeyValueStore (
 func init() {
 	// create DB
 	key := url.QueryEscape("passphrase")
-	tmpdir, err := ioutil.TempDir("", testDir)
+	tmpdir, err := os.MkdirTemp("", testDir)
 	if err != nil {
 		panic(err)
 	}
@@ -100,7 +99,7 @@ func TestSQLCipherParallelSelect(t *testing.T) {
 }
 
 func TestSQLCipherIsEncryptedFalse(t *testing.T) {
-	tmpdir, err := ioutil.TempDir("", testDir)
+	tmpdir, err := os.MkdirTemp("", testDir)
 	require.NoError(t, err)
 	defer os.RemoveAll(tmpdir)
 	dbname := filepath.Join(tmpdir, "unencrypted.sqlite")
@@ -116,7 +115,7 @@ func TestSQLCipherIsEncryptedFalse(t *testing.T) {
 }
 
 func TestSQLCipherIsEncryptedTrue(t *testing.T) {
-	tmpdir, err := ioutil.TempDir("", testDir)
+	tmpdir, err := os.MkdirTemp("", testDir)
 	require.NoError(t, err)
 	defer os.RemoveAll(tmpdir)
 	dbname := filepath.Join(tmpdir, "encrypted.sqlite")
