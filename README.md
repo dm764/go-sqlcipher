@@ -1,6 +1,6 @@
 ## go-sqlcipher
 
-[![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/mutecomm/go-sqlcipher) [![CI](https://github.com/mutecomm/go-sqlcipher/workflows/CI/badge.svg)](https://github.com/mutecomm/go-sqlcipher/actions)
+[![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/dm764/go-sqlcipher) [![CI](https://github.com/dm764/go-sqlcipher/workflows/CI/badge.svg)](https://github.com/dm764/go-sqlcipher/actions)
 
 ### Description
 
@@ -33,7 +33,7 @@ To upgrade your Go code to the 4.x series, change the import path to
 
 This package can be installed with the go get command:
 
-    go get github.com/mutecomm/go-sqlcipher
+    go get github.com/dm764/go-sqlcipher
 
 
 ### Documentation
@@ -62,10 +62,10 @@ SQLCipher. Do not forget the `url.QueryEscape()` call in your code!
 See also [PRAGMA key](https://www.zetetic.net/sqlcipher/sqlcipher-api/#PRAGMA_key).
 
 API documentation can be found here:
-http://godoc.org/github.com/mutecomm/go-sqlcipher
+http://godoc.org/github.com/dm764/go-sqlcipher
 
 Use the function
-[sqlite3.IsEncrypted()](https://godoc.org/github.com/mutecomm/go-sqlcipher#IsEncrypted)
+[sqlite3.IsEncrypted()](https://godoc.org/github.com/dm764/go-sqlcipher#IsEncrypted)
 to check whether a database file is encrypted or not.
 
 Examples can be found under the `./_example` directory
